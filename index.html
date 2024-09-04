@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noble International School - Customer Interaction</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #EDEDED; /* WhatsApp background color */
+            margin: 0;
+            padding: 20px;
+            color: #111111; /* Dark text color */
+        }
+
+        .container {
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #075E54;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .question {
+            background: #25D366; /* WhatsApp green */
+            color: #ffffff; /* White text */
+            border: none;
+            padding: 15px;
+            margin: 10px 0;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 5px;
+            text-align: left;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .question:hover {
+            background: #128C7E; /* Darker green */
+        }
+
+        .answer {
+            display: none;
+            padding: 15px;
+            background-color: #F0F0F0;
+            border-left: 4px solid #25D366;
+            border-radius: 5px;
+            margin-top: 5px;
+            font-size: 16px;
+        }
+
+        .answer a {
+            color: #128C7E;
+            text-decoration: underline; /* Underline for links */
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #555555;
+            font-size: 14px;
+            border-top: 1px solid #E0E0E0;
+            padding-top: 10px;
+        }
+
+        .social-icons {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .social-icons a {
+            margin: 0 10px;
+            display: inline-block;
+            color: #128C7E; /* WhatsApp green */
+            font-size: 24px;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.2); /* Scale up on hover */
+            color: #075E54; /* Darker green */
+        }
+
+        .button {
+            background-color: #25D366;
+            color: white;
+            padding: 10px 20px;
+            margin: 10px 5px 0 0;
+            text-decoration: none;
+            font-size: 14px;
+            border-radius: 5px;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #128C7E;
+        }
+    </style>
+    <script>
+        function toggleAnswer(id) {
+            const answer = document.getElementById(id);
+            const isVisible = answer.style.display === 'block';
+            document.querySelectorAll('.answer').forEach(el => el.style.display = 'none');
+            document.querySelectorAll('.question').forEach(el => el.style.color = '#ffffff');
+            if (!isVisible) {
+                answer.style.display = 'block';
+                document.querySelector(`.question[data-target="${id}"]`).style.color = '#ffffff';
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Noble International School</h1>
+
+        <div class="question" data-target="question1" onclick="toggleAnswer('question1')">
+            What is the fee structure?
+        </div>
+        <div id="question1" class="answer">
+            <p>For details about the fee structure, please visit our <a href="https://www.nobleqatar.com/fee-structure" target="_blank">Fee Structure</a> page.</p>
+        </div>
+
+        <div class="question" data-target="question2" onclick="toggleAnswer('question2')">
+            How can I make a fee payment?
+        </div>
+        <div id="question2" class="answer">
+            <p>To make a fee payment, visit our <a href="https://www.nobleqatar.com/fee-payment" target="_blank">Fee Payment</a> page.</p>
+        </div>
+
+        <div class="question" data-target="question3" onclick="toggleAnswer('question3')">
+            How to apply for admission?
+        </div>
+        <div id="question3" class="answer">
+            <p>To apply for admission, please visit our <a href="https://www.nobleqatar.com/admission-procedure" target="_blank">Admission Procedure</a> page.</p>
+        </div>
+
+        <div class="question" data-target="question4" onclick="toggleAnswer('question4')">
+            How to be a part of the team?
+        </div>
+        <div id="question4" class="answer">
+            <p>To apply to the school, please visit our <a href="https://www.nobleqatar.com/careers" target="_blank">Careers</a> page.</p>
+        </div>
+
+        <div class="question" data-target="question5" onclick="toggleAnswer('question5')">
+            Contact details of each branch?
+        </div>
+        <div id="question5" class="answer">
+            <p><strong>Abu Hamour:</strong> +97444162700</p>
+            <p>Email: <a href="mailto:fds@nobleqatar.com">fds@nobleqatar.com</a></p>
+            <a href="data:text/vcard;charset=utf-8,BEGIN%3AVCARD%0AVERSION%3A3.0%0AN%3A%3BAbu%20Hamour%3B%3B%3B%0ATEL%3BTYPE%3DCELL%3A+97444162700%0AEMAIL%3Afds%40nobleqatar.com%0AEND%3AVCARD%0A" download="Abu_Hamour.vcf" class="button">Save Contact</a>
+            <a href="tel:+97444162700" class="button">Call Now</a>
+
+            <p><strong>Al Mashaf:</strong> +97455016863</p>
+            <p>Email: <a href="mailto:fdswukair@nobleqatar.com">fdswukair@nobleqatar.com</a></p>
+            <a href="data:text/vcard;charset=utf-8,BEGIN%3AVCARD%0AVERSION%3A3.0%0AN%3A%3BAl%20Mashaf%3B%3B%3B%0ATEL%3BTYPE%3DCELL%3A+97455016863%0AEMAIL%3Afdswukair%40nobleqatar.com%0AEND%3AVCARD%0A" download="Al_Mashaf.vcf" class="button">Save Contact</a>
+            <a href="tel:+97455016863" class="button">Call Now</a>
+
+            <p><strong>Ain Khalid:</strong> +97440171877</p>
+            <p>Email: <a href="mailto:fdsprep@nobleqatar.com">fdsprep@nobleqatar.com</a></p>
+            <a href="data:text/vcard;charset=utf-8,BEGIN%3AVCARD%0AVERSION%3A3.0%0AN%3A%3BAin%20Khalid%3B%3B%3B%0ATEL%3BTYPE%3DCELL%3A+97440171877%0AEMAIL%3Afdsprep%40nobleqatar.com%0AEND%3AVCARD%0A" download="Ain_Khalid.vcf" class="button">Save Contact</a>
+            <a href="tel:+97440171877" class="button">Call Now</a>
+
+            <p><strong>Hilal:</strong> +97444428624</p>
+            <p>Email: <a href="mailto:fdskg@nobleqatar.com">fdskg@nobleqatar.com</a></p>
+            <a href="data:text/vcard;charset=utf-8,BEGIN%3AVCARD%0AVERSION%3A3.0%0AN%3A%3BHilal%3B%3B%3B%0ATEL%3BTYPE%3DCELL%3A+97444428624%0AEMAIL%3Afdskg%40nobleqatar.com%0AEND%3AVCARD%0A" download="Hilal.vcf" class="button">Save Contact</a>
+            <a href="tel:+97444428624" class="button">Call Now</a>
+        </div>
+
+     <div class="question" data-target="question6" onclick="toggleAnswer('question6')">
+            Social media links
+        </div>
+        <div id="question6" class="answer">
+            <p>Follow us on social media:</p>
+            <p><a href="https://facebook.com/nobleqatar" target="_blank"><i class="fab fa-facebook icon"></i> Facebook</a></p>
+            <p><a href="https://twitter.com/nobleqatar" target="_blank"><i class="fab fa-twitter icon"></i> Twitter</a></p>
+            <p><a href="https://linkedin.com/company/nobleqatar" target="_blank"><i class="fab fa-linkedin icon"></i> LinkedIn</a></p>
+            <p><a href="https://instagram.com/nobleqatar" target="_blank"><i class="fab fa-instagram icon"></i> Instagram</a></p>
+        </div>
+
+
+        <div class="footer">
+           <a href="https://www.nobleqatar.com" target="_blank">WWW.NOBLEQATAR.COM</a>
+    </div>
+</body>
+
+</html>
