@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noble International School - Business Card</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #b3cde0, #6497b1);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #03396c;
+        }
+
+        .business-card {
+            background: linear-gradient(145deg, #ffffff, #e3f2fd);
+            border-radius: 15px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            width: 350px;
+            text-align: center;
+            border: 3px solid #005b96;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .business-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .business-card h1 {
+            color: #011f4b;
+            margin-bottom: 20px;
+            font-size: 26px;
+            font-weight: 700;
+            text-shadow: 1px 1px 2px #b3cde0;
+        }
+
+        .business-card p {
+            color: #03396c;
+            margin: 8px 0;
+            font-size: 16px;
+            line-height: 1.5;
+            text-shadow: 1px 1px 1px #b3cde0;
+        }
+
+        .business-card a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .button, .save-button, .call-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px 5px;
+            padding: 12px;
+            width: 45%;
+            background-color: #005b96;
+            color: #ffffff;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .button:hover, .save-button:hover, .call-button:hover {
+            background-color: #03396c;
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .icon {
+            margin-right: 8px;
+            font-size: 18px;
+        }
+
+        .section-header {
+            color: #005b96;
+            font-weight: 700;
+            margin-top: 15px;
+            border-bottom: 2px solid #005b96;
+            padding-bottom: 5px;
+            text-shadow: 1px 1px 1px #b3cde0;
+            cursor: pointer;
+        }
+
+        .dropdown-content {
+            display: none;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background: #e3f2fd;
+            border: 1px solid #005b96;
+            border-radius: 5px;
+            margin: 10px 0;
+            padding: 10px;
+        }
+
+        .dropdown-content p {
+            margin: 8px 0;
+        }
+
+        .footer {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .footer a {
+            color: #03396c;
+            font-size: 24px;
+            transition: transform 0.3s ease, color 0.3s ease;
+            text-shadow: 1px 1px 2px #b3cde0;
+        }
+
+        .footer a:hover {
+            transform: scale(1.2);
+            color: #005b96;
+        }
+    </style>
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <script>
+        function toggleDropdown(id) {
+            const content = document.getElementById(id);
+            if (content.style.display === "block") {
+                content.style.display = "none";
+                content.style.maxHeight = null;
+            } else {
+                content.style.display = "block";
+                content.style.maxHeight = content.scrollHeight + "px";
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <div class="business-card">
+        <h1>Noble International School</h1>
+        <div class="button-container">
+            <a href="https://wa.me/97450162700" target="_blank" class="button">
+                <i class="fab fa-whatsapp icon"></i> WhatsApp
+            </a>
+            <a href="http://www.nobleqatar.com" target="_blank" class="button">
+                <i class="fas fa-globe icon"></i> Website
+            </a>
+        </div>
+        <div class="button-container">
+            <a href="https://www.nobleqatar.com/fee-structure" target="_blank" class="button">
+                <i class="fas fa-list-alt icon"></i> Fee Structure
+            </a>
+            <a href="https://www.nobleqatar.com/fee-payment" target="_blank" class="button">
+                <i class="fas fa-credit-card icon"></i> Fee Payment
+            </a>
+        </div>
+
+        <p class="section-header" onclick="toggleDropdown('contacts')">Contacts:</p>
+        <div id="contacts" class="dropdown-content">
+            <p><strong>Abu Hamour:</strong> +97444162700</p>
+            <p>Email: <a href="mailto:fds@nobleqatar.com" style="color: #011f4b;">fds@nobleqatar.com</a></p>
+            <div class="button-container">
+                <a href="data:text/vcard;charset=utf-8,BEGIN%3AVCARD%0AVERSION%3A3.0%0AN%3A%3BAbu%20Hamour%3B%3B%3B%0ATEL%3BTYPE%3DCELL%3A+97444162700%0AEMAIL%3Afds%40nobleqatar.com%0AEND%3AVCARD%0A" download="Abu_Hamour.vcf" class="save-button">
+                    <i class="fas fa-address-card icon"></i> Save Contact
+                </a>
+                <a href="tel:+97444162700" class="call-button">
+                    <i class="fas fa-phone icon"></i> Call Now
+                </a>
+            </div>
+            <p><strong>Al Mashaf:</strong> +97455016863</p>
+            <p>Email: <a href="mailto:fdswukair@nobleqatar.com" style="color: #011f4b;">fdswukair@nobleqatar.com</a></p>
+            <div class="button-container">
+                <a href="data:text/vcard;charset=utf-8,BEGIN%3AVCARD%0AVERSION%3A3.0%0AN%3A%3BAl%20Mashaf%3B%3B%3B%0ATEL%3BTYPE%3DCELL%3A+97455016863%0AEMAIL%3Afdswukair%40nobleqatar.com%0AEND%3AVCARD%0A" download="Al_Mashaf.vcf" class="save-button">
+                    <i class="fas fa-address-card icon"></i> Save Contact
+                </a>
+                <a href="tel:+97455016863" class="call-button">
+                    <i class="fas fa-phone icon"></i> Call Now
+                </a>
+            </div>
+            <p><strong>Ain Khalid:</strong> +97440171877</p>
+            <p>Email: <a href="mailto:fdsprep@nobleqatar.com" style="color: #011f4b;">fdsprep@nobleqatar.com</a></p>
+            <div class="button-container">
+                <a href="data:text/vcard;charset=utf-8,BEGIN%3AVCARD%0AVERSION%3A3.0%0AN%3A%3BAin%20Khalid%3B%3B%3B%0ATEL%3BTYPE%3DCELL%3A+97440171877%0AEMAIL%3Afdsprep%40nobleqatar.com%0AEND%3AVCARD%0A" download="Ain_Khalid.vcf" class="save-button">
+                    <i class="fas fa-address-card icon"></i> Save Contact
+                </a>
+                <a href="tel:+97440171877" class="call-button">
+                    <i class="fas fa-phone icon"></i> Call Now
+                </a>
+            </div>
+            <p><strong>Hilal:</strong> +97444428624</p>
+            <p>Email: <a href="mailto:fdskg@nobleqatar.com" style="color: #011f4b;">fdskg@nobleqatar.com</a></p>
+            <div class="button-container">
+                <a href="data:text/vcard;charset=utf-8,BEGIN%3AVCARD%0AVERSION%3A3.0%0AN%3A%3BHilal%3B%3B%3B%0ATEL%3BTYPE%3DCELL%3A+97444428624%0AEMAIL%3Afdskg%40nobleqatar.com%0AEND%3AVCARD%0A" download="Hil.vcf" class="save-button">
+                    <i class="fas fa-address-card icon"></i> Save Contact
+                </a>
+                <a href="tel:+97444428624" class="call-button">
+                    <i class="fas fa-phone icon"></i> Call Now
+                </a>
+            </div>
+        </div>
+
+        <p class="section-header" onclick="toggleDropdown('transport')">Transport Department:</p>
+        <div id="transport" class="dropdown-content">
+            <p>Transport Manager: <a href="mailto:tp_primary@nobleqatar.com" style="color: #011f4b;">tp_primary@nobleqatar.com</a></p>
+            <p>Wukair: <a href="mailto:transport1@nobleqatar.com" style="color: #011f4b;">transport1@nobleqatar.com</a></p>
+            <p>KG: <a href="mailto:transport@nobleqatar.com" style="color: #011f4b;">transport@nobleqatar.com</a></p>
+        </div>
+
+        <p class="section-header" onclick="toggleDropdown('administrator')">Administrator:</p>
+        <div id="administrator" class="dropdown-content">
+            <p>Admin: <a href="mailto:Administrator@nobleqatar.com" style="color: #011f4b;">Administrator@nobleqatar.com</a></p>
+            <p>KG: <a href="mailto:Admin2@nobleqatar.com" style="color: #011f4b;">Admin2@nobleqatar.com</a></p>
+        </div>
+
+        <p class="section-header" onclick="toggleDropdown('accounts')">Accounts Department:</p>
+        <div id="accounts" class="dropdown-content">
+            <p>Accounts Manager: <a href="mailto:accounts@nobleqatar.com" style="color: #011f4b;">accounts@nobleqatar.com</a></p>
+            <p>Accountant: <a href="mailto:rizwan@nobleqatar.com" style="color: #011f4b;">rizwan@nobleqatar.com</a></p>
+            <p>Cashier: <a href="mailto:casheir@nobleqatar.com" style="color: #011f4b;">casheir@nobleqatar.com</a></p>
+        </div>
+
+        <p class="section-header" onclick="toggleDropdown('hours')">Office Hours:</p>
+        <div id="hours" class="dropdown-content">
+            <p>Sun-Thurs: 7:00 AM - 1:00 PM</p>
+            <p>Saturday: 8:00 AM - 1:00 PM</p>
+            <p>Evening: 4:30 PM - 6:30 PM</p>
+            <p>Fri: Closed</p>
+        </div>
+
+        <div class="footer">
+            <a href="https://www.facebook.com/people/Noble-International-School-Doha-Qatar/100057220040866/" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.youtube.com/user/NobleSchoolDoha/videos" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://linkedin.com/company/nobleqatar" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://instagram.com/nobleqatar" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>
+</body>
+
+</html>
+
